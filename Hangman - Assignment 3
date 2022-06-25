@@ -5,6 +5,7 @@
 setwd("~crystal/Documents/2011/")
 getwd()
 
+#Retriving text file of words and putting them into a list 
 inlist <- strsplit(readLines("dictionary_of_words.txt"), "[[:space:]]+")
 pathways <- lapply(inlist, tail, n = -1)
 names(pathways) <- lapply(inlist, head, n = 1)
@@ -20,17 +21,22 @@ print(paste0("Your word has ", nchar(word), " letters."))
 print(strrep('_ ', nchar(word)))
 tries = 10 
 
-guessed_letters <- vector()
+#Creating vector for the word 
 wordpiece <- vector()
 
 while (tries > 0 ) {
   letter <- readline("Please guess a letter: ")
-  
-  if(is.na(letter) || nchar(letter) != 1){
+  tries = tries -1
+  while(is.na(letter) | nchar(letter) != 1 | grepl("[a-z]",letter) == F){
     print("Invalid letter entry. ")
-  } else {
-    for letter in word {
-      wordpiece <- append(wordpiece, '_')
+    letter <- readline("Please guess a single letter: ")
+    if (grepl(letter, word, ignore.case = T)) {
+      print(paste("Correct! This letter is in the word") 
+    if (paste(wordpiece == word) {
+      print(paste("Congratulations you have guessed the word: ", word))
     }
   }
 }
+}
+
+
