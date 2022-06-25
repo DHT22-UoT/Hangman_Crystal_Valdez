@@ -1,0 +1,36 @@
+#' Assignment 3 - 2011
+#' Crystal Valdez
+#' Hangman Assignment 
+
+setwd("~crystal/Documents/2011/")
+getwd()
+
+inlist <- strsplit(readLines("dictionary_of_words.txt"), "[[:space:]]+")
+pathways <- lapply(inlist, tail, n = -1)
+names(pathways) <- lapply(inlist, head, n = 1)
+
+#Choose a random word from the dictionary list 
+word <- sample(inlist, 1)
+
+#Provide instructions to the user 
+cat("Your instructions are to guess one letter at a time to make up the secret word. \nYou win if you guess the word right within 10 tries. If you use up your tries, you lose.\nBest of luck!\n")
+
+#Tell user the number of letters in word
+print(paste0("Your word has ", nchar(word), " letters."))
+print(strrep('_ ', nchar(word)))
+tries = 10 
+
+guessed_letters <- vector()
+wordpiece <- vector()
+
+while (tries > 0 ) {
+  letter <- readline("Please guess a letter: ")
+  
+  if(is.na(letter) || nchar(letter) != 1){
+    print("Invalid letter entry. ")
+  } else {
+    for letter in word {
+      wordpiece <- append(wordpiece, '_')
+    }
+  }
+}
