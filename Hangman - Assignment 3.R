@@ -14,6 +14,7 @@ names(pathways) <- lapply(inlist, head, n = 1)
 #Choose a random word from the dictionary list
 word <- sample(inlist, 1)
 
+# print word for debugging purposes 
 print(word)
 
 #Provide instructions to the user
@@ -24,14 +25,14 @@ cat(
 #Tell user the number of letters in word
 print(paste0("Your word has ", nchar(word), " letters."))
 print(strrep('_ ', nchar(word)))
-tries = 3
+tries = 10
 
 #Creating vector for the word
 wordpiece <- vector()
 
 while (tries > 0) {
   letter <- tolower(readline("Please guess a letter: "))
-  while (is.na(letter) | nchar(letter) != 1) {
+  while (is.na(letter) | nchar(letter) != 1 | !is.na(as.numeric(letter))) {
     print("Invalid letter entry. ")
     letter <- readline("Please guess a single letter: ")
     if (grepl(letter, word, ignore.case = T)) {
