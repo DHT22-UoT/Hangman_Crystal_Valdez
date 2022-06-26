@@ -25,7 +25,7 @@ cat(
 #Tell user the number of letters in word
 print(paste0("Your word has ", nchar(word), " letters."))
 print(strrep('_ ', nchar(word)))
-tries = 10
+tries <- 10
 
 #Creating vector for the word
 wordpiece <- vector()
