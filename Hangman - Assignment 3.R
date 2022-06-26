@@ -57,6 +57,8 @@ while (tries > 0) {
   if (tries == 0) {
     print("You have ran out of tries. Sorry!")
   }
+  
+  # checking if user has guessed all letters in the word
   if (paste(paste(wordpiece, collapse="" ) == word)) {
     print(paste("Congratulations you have guessed the word: ", word))
     break
