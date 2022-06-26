@@ -32,7 +32,7 @@ wordpiece <- vector()
 
 while (tries > 0) {
   letter <- tolower(readline("Please guess a letter: "))
-  while (is.na(letter) | nchar(letter) != 1 | !is.na(as.numeric(letter))) {
+  while (nchar(letter) != 1 | !is.na(as.numeric(letter))) {
     print("Invalid letter entry. ")
     letter <- readline("Please guess a single letter: ")
     if (grepl(letter, word, ignore.case = T)) {
