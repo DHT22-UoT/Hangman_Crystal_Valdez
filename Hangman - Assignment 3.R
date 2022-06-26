@@ -43,7 +43,6 @@ while (tries > 0) {
   if (grepl(letter, word, ignore.case = T)) {
     wordpiece <- append(wordpiece, letter)
     correctplace <- which(word == letter)
-    print(correctplace)
     
     for (i in correctplace) {
       wordpiece[i] <- letter
@@ -52,7 +51,7 @@ while (tries > 0) {
       paste("Correct! This letter is in the word"))
   } else {
     print("This letter is not in the word")
-    tries = tries - 1
+    tries <- tries - 1
     print("You have ", tries, "tries remaining.")
   }
   if (lives == 0) {
