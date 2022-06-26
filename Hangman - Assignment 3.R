@@ -14,6 +14,8 @@ names(pathways) <- lapply(inlist, head, n = 1)
 #Choose a random word from the dictionary list
 word <- sample(inlist, 1)
 
+print(word)
+
 #Provide instructions to the user
 cat(
   "Your instructions are to guess one letter at a time to make up the secret word. \nYou win if you guess the word right within 10 tries. If you use up your tries, you lose.\nBest of luck!\n"
@@ -22,14 +24,14 @@ cat(
 #Tell user the number of letters in word
 print(paste0("Your word has ", nchar(word), " letters."))
 print(strrep('_ ', nchar(word)))
-tries = 10
+tries = 3
 
 #Creating vector for the word
 wordpiece <- vector()
 
 while (tries > 0) {
-  letter <- readline("Please guess a letter: ")
-  while (is.na(letter) | nchar(letter) != 1 | grepl("[a-z]", letter) == F) {
+  letter <- tolower(readline("Please guess a letter: "))
+  while (is.na(letter) | nchar(letter) != 1) {
     print("Invalid letter entry. ")
     letter <- readline("Please guess a single letter: ")
     if (grepl(letter, word, ignore.case = T)) {
