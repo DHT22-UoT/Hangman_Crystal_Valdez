@@ -43,11 +43,15 @@ while (tries > 0) {
   
   # checking if letter given from user is in the secret word
   if (grepl(letter, word, ignore.case = T)) {
+    
     letters <- strsplit(as.character(word),"")[[1]]
     indices <- which(letters == letter)
     wordpiece[indices] <- letter
     print(
       paste("Correct! This letter is in the word"))
+    
+    # print visual clue for how user is progressing
+    print(wordpiece)
   } else {
     print("This letter is not in the word")
     tries <- tries - 1
