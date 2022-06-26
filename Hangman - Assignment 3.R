@@ -45,7 +45,7 @@ while (tries > 0) {
       tries = tries - 1
       print("You have ", tries, "tries remaining.")
     }
-    if (lives = 0) {
+    if (lives == 0) {
       print("You have ran out of tries. Sorry!")
     }
     if (paste(wordpiece == word)) {
