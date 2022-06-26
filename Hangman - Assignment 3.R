@@ -39,7 +39,7 @@ while (tries > 0) {
         wordpiece[i] <- letter
       }
       print(
-        paste("Correct! This letter is in the word")
+        paste("Correct! This letter is in the word"))
     } else {
       print("This letter is not in the word")
       tries = tries - 1
@@ -48,10 +48,11 @@ while (tries > 0) {
     if (lives = 0) {
       print("You have ran out of tries. Sorry!")
     }
-    if (paste(wordpiece == word) {
+    if (paste(wordpiece == word)) {
       print(paste("Congratulations you have guessed the word: ", word))
     }
   }
 }
+
 
 
