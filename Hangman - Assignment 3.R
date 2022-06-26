@@ -28,10 +28,11 @@ print(strrep('_ ', nchar(word)))
 tries <- 10
 
 #Creating vector for the word
-wordpiece <- vector()
+wordpiece <- replicate(nchar(word),"_")
 
 
 while (tries > 0) {
+ 
   letter <- tolower(readline("Please guess a letter: "))
 
   # checking user input is valid 
@@ -42,12 +43,9 @@ while (tries > 0) {
   
   # checking if letter given from user is in the secret word
   if (grepl(letter, word, ignore.case = T)) {
-    wordpiece <- append(wordpiece, letter)
-    correctplace <- which(word == letter)
-    
-    for (i in correctplace) {
-      wordpiece[i] <- letter
-    }
+    letters <- strsplit(as.character(word),"")[[1]]
+    indices <- which(letters == letter)
+    wordpiece[indices] <- letter
     print(
       paste("Correct! This letter is in the word"))
   } else {
@@ -59,9 +57,10 @@ while (tries > 0) {
   if (tries == 0) {
     print("You have ran out of tries. Sorry!")
   }
-  if (paste(wordpiece == word)) {
+  if (paste(paste(wordpiece, collapse="" ) == word)) {
     print(paste("Congratulations you have guessed the word: ", word))
-  }
+    break
+  } # break out of while loop if user has guessed all the letters in the word
 
 }
 
