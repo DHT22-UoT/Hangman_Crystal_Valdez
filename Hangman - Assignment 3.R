@@ -30,9 +30,10 @@ tries <- 10
 #Creating vector for the word
 wordpiece <- vector()
 
+
 while (tries > 0) {
   letter <- tolower(readline("Please guess a letter: "))
-  
+
   # checking user input is valid 
   while (nchar(letter) != 1 | !is.na(as.numeric(letter))) {
     print("Invalid letter entry.")
@@ -52,14 +53,16 @@ while (tries > 0) {
   } else {
     print("This letter is not in the word")
     tries <- tries - 1
-    print("You have ", tries, "tries remaining.")
+    print(sprintf("You have %d tries remaining.",tries))
   }
+
   if (lives == 0) {
     print("You have ran out of tries. Sorry!")
   }
   if (paste(wordpiece == word)) {
     print(paste("Congratulations you have guessed the word: ", word))
   }
+
 }
 
 
