@@ -32,28 +32,34 @@ wordpiece <- vector()
 
 while (tries > 0) {
   letter <- tolower(readline("Please guess a letter: "))
+  
+  # checking user input is valid 
   while (nchar(letter) != 1 | !is.na(as.numeric(letter))) {
-    print("Invalid letter entry. ")
+    print("Invalid letter entry.")
     letter <- readline("Please guess a single letter: ")
-    if (grepl(letter, word, ignore.case = T)) {
-      wordpiece <- append(wordpiece, letter)
-      correctplace <- which(word == letter)
-      for (i in correctplace) {
-        wordpiece[i] <- letter
-      }
-      print(
-        paste("Correct! This letter is in the word"))
-    } else {
-      print("This letter is not in the word")
-      tries = tries - 1
-      print("You have ", tries, "tries remaining.")
+  } # end when entry is valid 
+  
+  # checking if letter given from user is in the secret word
+  if (grepl(letter, word, ignore.case = T)) {
+    wordpiece <- append(wordpiece, letter)
+    correctplace <- which(word == letter)
+    print(correctplace)
+    
+    for (i in correctplace) {
+      wordpiece[i] <- letter
     }
-    if (lives == 0) {
-      print("You have ran out of tries. Sorry!")
-    }
-    if (paste(wordpiece == word)) {
-      print(paste("Congratulations you have guessed the word: ", word))
-    }
+    print(
+      paste("Correct! This letter is in the word"))
+  } else {
+    print("This letter is not in the word")
+    tries = tries - 1
+    print("You have ", tries, "tries remaining.")
+  }
+  if (lives == 0) {
+    print("You have ran out of tries. Sorry!")
+  }
+  if (paste(wordpiece == word)) {
+    print(paste("Congratulations you have guessed the word: ", word))
   }
 }
 
