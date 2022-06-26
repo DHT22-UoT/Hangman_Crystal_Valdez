@@ -56,7 +56,7 @@ while (tries > 0) {
     print(sprintf("You have %d tries remaining.",tries))
   }
 
-  if (lives == 0) {
+  if (tries == 0) {
     print("You have ran out of tries. Sorry!")
   }
   if (paste(wordpiece == word)) {
