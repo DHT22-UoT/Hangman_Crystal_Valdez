@@ -1,0 +1,13 @@
+quidditch
+muggle
+hogwarts
+expelliarmus
+howler
+parseltongue
+patronus
+seeker
+bludger
+quaffle
+mandrake
+dragon
+gringotts
