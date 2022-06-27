@@ -70,6 +70,18 @@ while (tries > 0) {
 
 }
 
+#' Ashley review comment: The variable names were readable so it made the code easier 
+#' to follow. It may be good to include a sample dictionary_of_words.txt file so the user
+#' can have a dictionary to use right away. Running the code from source there were 
+#' some errors like unmatched bracket for example. Meanwhile, some errors only occurred when 
+#' certain conditions were met. It is good to test the code using all possible inputs from the user
+#' to ensure that if any of the conditions are met at any point in time, there won't be any 
+#' errors when that piece of code runs and also to ensure the code runs as expected with each
+#' possible input. Lastly, the code before going into the while loop was well commented
+#' and was easy to follow. I felt that having more comments within the while loop or 
+#' perhaps a block of code before the while loop explaining the code inside the loop
+#' could have been helpful for following the code within the while loops. I felt that
+#' the code within the while loops was harder to follow without comments.  
 
 
 
