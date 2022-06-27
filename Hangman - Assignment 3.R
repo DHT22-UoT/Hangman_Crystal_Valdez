@@ -36,7 +36,7 @@ while (tries > 0) {
   letter <- tolower(readline("Please guess a letter: "))
 
   # checking user input is valid 
-  while (nchar(letter) != 1 | !is.na(as.numeric(letter))) {
+  while (nchar(letter) != 1 | !is.na(as.numeric(letter)) | grepl("[a-z]", letter) == F) {
     print("Invalid letter entry.")
     letter <- readline("Please guess a single letter: ")
   } # end when entry is valid 
@@ -69,6 +69,7 @@ while (tries > 0) {
   } # break out of while loop if user has guessed all the letters in the word
 
 }
+
 
 
 
